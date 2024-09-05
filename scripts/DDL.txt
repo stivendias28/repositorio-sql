@@ -1,0 +1,49 @@
+CREATE DATABASE IF NOT EXISTS CentroRecreacional;
+USE CentroRecreacional;
+
+CREATE TABLE Clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    email VARCHAR(150),
+    telefono VARCHAR(20),
+    fecha_registro DATE DEFAULT CURRENT_DATE
+);
+
+CREATE TABLE Empleados (
+    id_empleado INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    cargo VARCHAR(50),
+    salario DECIMAL(10, 2),
+    fecha_contratacion DATE DEFAULT CURRENT_DATE
+);
+
+CREATE TABLE Productos (
+    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    precio DECIMAL(10, 2) NOT NULL,
+    stock INT NOT NULL
+);
+
+CREATE TABLE Ventas (
+    id_venta INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_empleado INT,
+    fecha_venta DATETIME DEFAULT CURRENT_TIMESTAMP,
+    total DECIMAL(10, 2),
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente),
+    FOREIGN KEY (id_empleado) REFERENCES Empleados(id_empleado)
+);
+
+CREATE TABLE DetallesVenta (
+    id_detalle INT AUTO_INCREMENT PRIMARY KEY,
+    id_venta INT,
+    id_producto INT,
+    cantidad INT NOT NULL,
+    precio_unitario DECIMAL(10, 2),
+    subtotal DECIMAL(10, 2),
+    FOREIGN KEY (id_venta) REFERENCES Ventas(id_venta),
+    FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)
+);
