@@ -1,0 +1,7 @@
+2. Consulta para ver el total de ingresos por empleado (ventas que ha realizado).
+
+SELECT E.nombre, E.apellido, SUM(V.total) AS total_ingresos
+FROM empleados E
+JOIN ventas V ON E.id_empleado = V.id_empleado
+GROUP BY E.id_empleado
+ORDER BY total_ingresos DESC;
