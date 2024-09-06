@@ -1,0 +1,10 @@
+
+1.Consulta para obtener el cliente con más compras realizadas (en cantidad total de productos)
+
+SELECT C.nombre, C.apellido, SUM(DV.cantidad) AS total_productos
+FROM clientes C
+JOIN Ventas V ON C.id_cliente = V.id_cliente
+JOIN DetallesVenta DV ON V.id_venta = DV.id_venta
+GROUP BY C.id_cliente
+ORDER BY total_productos DESC
+LIMIT 1;
