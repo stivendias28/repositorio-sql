@@ -1,0 +1,6 @@
+4. Consulta para obtener el total de ingresos diarios.
+
+SELECT DATE(V.fecha_venta) AS fecha, SUM(V.total) AS total_ingresos
+FROM ventas V
+GROUP BY DATE(V.fecha_venta)
+ORDER BY fecha DESC;
