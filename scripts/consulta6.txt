@@ -1,0 +1,3 @@
+6.Consulta DDL agrega a tabla empleados fecha_nacimiento
+ALTER TABLE empleados
+ADD fecha_nacimiento DATE;
