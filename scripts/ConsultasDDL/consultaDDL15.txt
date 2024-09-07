@@ -1,0 +1,10 @@
+
+
+
+
+
+
+16. Modificar una columna para cambiar el tipo de dato de telefono en la tabla Clientes:
+
+ALTER TABLE clientes
+MODIFY COLUMN telefono VARCHAR(15);

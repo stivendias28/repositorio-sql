@@ -1,0 +1,5 @@
+11. Consultar productos con stock inferior a 10 unidades:
+
+SELECT nombre, stock
+FROM productos
+WHERE stock < 50;

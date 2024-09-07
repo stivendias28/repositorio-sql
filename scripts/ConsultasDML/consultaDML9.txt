@@ -1,0 +1,4 @@
+9. Eliminar un producto agotado (sin stock):
+
+DELETE FROM productos
+WHERE stock = 0;

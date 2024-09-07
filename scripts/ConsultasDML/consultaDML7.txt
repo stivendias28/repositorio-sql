@@ -1,0 +1,4 @@
+7. Insertar nuevos registros en la tabla Clientes:
+
+INSERT INTO clientes (nombre, apellido, email, telefono)
+VALUES ('Marta', 'Salazar', 'marta.salazar@email.com', '555987123');

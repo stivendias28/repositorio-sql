@@ -1,0 +1,8 @@
+10. Consultar ventas realizadas por un cliente específico:
+
+SELECT ventas.id_venta, ventas.fecha_venta, ventas.total
+FROM ventas
+JOIN clientes ON ventas.id_cliente = clientes.id_cliente
+WHERE clientes.nombre = 'Juan' AND clientes.apellido = 'Pérez';
+
+

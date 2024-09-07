@@ -1,0 +1,5 @@
+14. Eliminar una tabla que ya no se necesita:
+
+DROP TABLE proveedores;
+15. Crear un índice en la tabla Ventas para acelerar la búsqueda por fecha:
+CREATE INDEX idx_fecha_venta ON Ventas(fecha_venta);

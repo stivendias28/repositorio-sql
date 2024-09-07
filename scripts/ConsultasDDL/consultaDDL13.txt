@@ -1,0 +1,4 @@
+13. Modificar una tabla para agregar una columna direccion en la tabla Clientes:
+
+ALTER TABLE clientes
+ADD COLUMN direccion VARCHAR(255);
